@@ -29,17 +29,13 @@ export default function Index() {
   const props: UploadProps = {
     name: "file",
     async onChange(info) {
-      console.log(info);
-
       const file = info.file.originFileObj;
 
       parseExcelToJson(file, ({ list }) => {
         setSheetData(list.slice(1) || []);
       });
     },
-    onDrop(e) {
-      console.log("Dropped files", e.dataTransfer.files);
-    },
+    onDrop(e) {},
   };
 
   useEffect(() => {
@@ -127,7 +123,6 @@ export default function Index() {
           type: "bar",
           itemStyle: {
             color: (params) => {
-              console.log(params);
               const value = map.current.get(params.name) as state;
               if (value.current > value.other) return "#ee6666";
               return "#5470c6";
