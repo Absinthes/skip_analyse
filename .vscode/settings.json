@@ -1,0 +1,7 @@
+{
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  // 设定tabsize
+  "editor.tabSize": 2,
+  // 文件保存时自动格式化
+  "editor.formatOnSave": true
+}
